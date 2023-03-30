@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import PokemonCard from './components/pokemonCard.jsx'
 import PropTypes from 'prop-types';
-
+import NavBar from './components/navBar'
 
 
 
