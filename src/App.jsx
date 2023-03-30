@@ -50,7 +50,7 @@ const pokemonList = [
 ];
 
 function App() {
-  const [pokemonIndex, setPokemonIndex] = useState(0);
+  /*   const [pokemonIndex, setPokemonIndex] = useState(0);
 
   const handlePrevClick = () => {
     setPokemonIndex((Index) => Index - 1);
@@ -74,6 +74,33 @@ function App() {
       {pokemonIndex < pokemonList.length - 1 && (
         <button onClick={handleNextClick}>Suivant</button>
       )}
+    </div>
+  );
+}
+*/
+
+
+ const [pokemonIndex, setPokemonIndex] = useState(0);
+
+  function handlePrevClick() {
+    setPokemonIndex((prevIndex) => prevIndex - 1);
+  }
+
+  function handleNextClick() {
+    setPokemonIndex((prevIndex) => prevIndex + 1);
+  }
+
+  const currentPokemon = pokemonList[pokemonIndex];
+
+  return (
+    <div>
+      <NavBar
+        currentIndex={pokemonIndex}
+        onPrevClick={handlePrevClick}
+        onNextClick={handleNextClick}
+      />
+      <h1>{currentPokemon.name}</h1>
+      <img src={currentPokemon.imgSrc} alt={currentPokemon.name} />
     </div>
   );
 }
