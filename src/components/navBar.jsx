@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 
 
@@ -23,6 +24,7 @@ function NavBar({ pokemonList, onPokemonClick }) {
 
 
 export default NavBar
+
 
 
 
