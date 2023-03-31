@@ -50,59 +50,45 @@ const pokemonList = [
 ];
 
 function App() {
-  /*   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const handlePrevClick = () => {
-    setPokemonIndex((Index) => Index - 1);
-  };
-
-  const handleNextClick = () => {
-    setPokemonIndex((Index) => Index + 1);
-  };
-
-  return (
-    <div>
-      {pokemonList[pokemonIndex].name && (
-        <h1>{pokemonList[pokemonIndex].name}</h1>
-      )}
-      {pokemonList[pokemonIndex].imgSrc && (
-        <img src={pokemonList[pokemonIndex].imgSrc} alt={pokemonList[pokemonIndex].name} />
-      )}
-      {pokemonIndex > 0 && (
-        <button onClick={handlePrevClick}>Précédent</button>
-      )}
-      {pokemonIndex < pokemonList.length - 1 && (
-        <button onClick={handleNextClick}>Suivant</button>
-      )}
-    </div>
-  );
-}
-*/
 
 
  const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  function handlePrevClick() {
-    setPokemonIndex((prevIndex) => prevIndex - 1);
-  }
+  const handlePokemonClick = (index) =>  {
+    setPokemonIndex(index);
+  };
 
-  function handleNextClick() {
-    setPokemonIndex((prevIndex) => prevIndex + 1);
-  }
 
   const currentPokemon = pokemonList[pokemonIndex];
 
   return (
     <div>
-      <NavBar
-        currentIndex={pokemonIndex}
-        onPrevClick={handlePrevClick}
-        onNextClick={handleNextClick}
-      />
-      <h1>{currentPokemon.name}</h1>
-      <img src={currentPokemon.imgSrc} alt={currentPokemon.name} />
+       <PokemonCard pokemon={currentPokemon} />
+      <NavBar  pokemonList={pokemonList} onPokemonClick={handlePokemonClick} />
+    
     </div>
-  );
-}
-
+  ); }
+      
 export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
